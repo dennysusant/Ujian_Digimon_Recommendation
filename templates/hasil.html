@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Cari Digimon Favorit</title>
+    <style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9f0KdAzxyGuN254_7q7IuJBemgoZlugeVtN5sbfrXdKmGYG8J");
+        background-position: center top; 
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2>Pokemon Favoritmu</h2>
+    <img src="{{favorit['Pic']}}" alt="Gambar digi"><br>
+    Nama : {{favorit['Nama'].capitalize()}}
+    Stage : {{favorit['Stage']}}
+    Type : {{favorit['Type']}}
+    Attribute : {{favorit['attribute']}}<br>
+    <h2>Rekomendasi Digimon dari kami</h2>
+    <ul>
+        {% for item in rekomen %}
+        <img src="{{item['gambar']}}" alt="Gambar digi"><br>
+        <h4>Nama : {{ item['Nama'] }}</h4><br>
+        Stage : {{ item['stage'] }}
+        Type : {{ item['Type'] }}
+        Attribute : {{ item['attribute'] }}<br>
+        {% endfor %}
+    </ul>
+    <form action="http://localhost:5000/">
+        <button type="submit">Kembali</button>
+    </form>
+</center>
+
+</body>
+</html>
